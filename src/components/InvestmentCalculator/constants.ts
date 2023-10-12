@@ -4,6 +4,14 @@ export interface UserInputValues {
   expectedReturn?: number;
   duration?: number;
 }
+export type ResultData = {
+  year: number;
+  yearlyInterest: number;
+  savingsEndOfYear: number;
+  yearlyContribution: number;
+  totalInterest: number;
+  investedCapital: number;
+};
 export const INPUT_KEYS = {
   CURRENT_SAVINGS: 'currentSavings',
   YEARLY_CONTRIBUTION: 'yearlyContribution',
@@ -15,12 +23,4 @@ export const initialInputValue = {
   yearlyContribution: 0,
   expectedReturn: 0,
   duration: 0,
-};
-export type ResultData = {
-  year: number;
-  yearlyInterest: number;
-  savingsEndOfYear: number;
-  yearlyContribution: number;
-  totalInterest: number;
-  investedCapital: number;
 };

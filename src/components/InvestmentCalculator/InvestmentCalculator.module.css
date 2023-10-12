@@ -1,0 +1,78 @@
+.header {
+  text-align: center;
+  margin: 3rem auto;
+
+  & h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.form {
+  padding: 1rem;
+  max-width: 30rem;
+  margin: 2rem auto;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #307e6c, #2b996d);
+
+  .input-group {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    margin: 1rem;
+  }
+
+  & label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  & input {
+    padding: 5px;
+  }
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    color: #c2e9e0;
+    cursor: pointer;
+  }
+  .submit-btn {
+    background: linear-gradient(180deg, #1f584b, #17493d);
+  }
+  .reset-btn {
+    background: linear-gradient(180deg, #19846c, #3e8875);
+  }
+  & button:hover {
+    background: linear-gradient(180deg, #1b5346, #113c32);
+  }
+}
+
+.result-table {
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  table-layout: fixed;
+  border-spacing: 1rem;
+  text-align: right;
+
+  & thead {
+    font-size: 0.85rem;
+  }
+
+  & tbody {
+    font-size: 0.85rem;
+  }
+}
+
+.result-note {
+  text-align: center;
+  font-size: 0.85rem;
+}

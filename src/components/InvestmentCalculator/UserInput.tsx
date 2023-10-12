@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { INPUT_KEYS, UserInputValues, initialInputValue } from './constants';
 import { NumberInput } from './NumberInput';
+import styles from './InvestmentCalculator.module.css';
 interface UserInputProps {
   onCalculate: (inputValues: UserInputValues) => void;
 }
@@ -28,8 +29,8 @@ export const UserInput: React.FC<UserInputProps> = ({ onCalculate }) => {
     [inputValues, onCalculate],
   );
   return (
-    <form onSubmit={submitHandler}>
-      <div>
+    <form className={styles.form} onSubmit={submitHandler}>
+      <div className={styles['input-group']}>
         <NumberInput
           id={INPUT_KEYS.CURRENT_SAVINGS}
           label={'Current Savings ($)'}
@@ -43,7 +44,7 @@ export const UserInput: React.FC<UserInputProps> = ({ onCalculate }) => {
           onChange={inputValuesChangeHandler}
         />
       </div>
-      <div>
+      <div className={styles['input-group']}>
         <NumberInput
           id={INPUT_KEYS.EXPECTED_RETURN}
           label={' Expected Interest (%, per year)'}
@@ -57,11 +58,20 @@ export const UserInput: React.FC<UserInputProps> = ({ onCalculate }) => {
           onChange={inputValuesChangeHandler}
         />
       </div>
-      <div>
-        <button type="reset" onClick={resetHandler}>
+      <div className={styles.actions}>
+        <button
+          type="reset"
+          className={`${styles.button} ${styles['reset-btn']}`}
+          onClick={resetHandler}
+        >
           Reset
         </button>
-        <button type="submit">Calculate</button>
+        <button
+          type="submit"
+          className={`${styles.button} ${styles['submit-btn']}`}
+        >
+          Calculate
+        </button>
       </div>
     </form>
   );
