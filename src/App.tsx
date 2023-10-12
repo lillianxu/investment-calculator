@@ -1,14 +1,9 @@
 import React from 'react';
+import { InvestmentCalculator } from './components/InvestmentCalculator/InvestmentCalculator';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>New React APP</p>
-      </header>
-    </div>
-  );
+  return <InvestmentCalculator />;
 }
 
 export default App;
