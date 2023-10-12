@@ -7,12 +7,15 @@ import { UserInputValues } from './constants';
 
 export const InvestmentCalculator: React.FC = () => {
   const [userInputValues, setUserInputValues] = useState<UserInputValues>({});
+
   const calculateHandler = (inputValues: UserInputValues) => {
     return setUserInputValues(inputValues);
   };
+
   const showFallbackText = Object.keys(userInputValues).length === 0;
 
   let yearlyData = [];
+
   if (!showFallbackText) {
     let currentSavings = userInputValues.currentSavings ?? 0;
     const yearlyContribution = userInputValues.yearlyContribution ?? 0;
@@ -41,7 +44,6 @@ export const InvestmentCalculator: React.FC = () => {
     <div>
       <CalculatorHeader />
       <UserInput onCalculate={calculateHandler} />
-
       {showFallbackText ? (
         <p className={styles['result-note']}>No Investment calculated yet.</p>
       ) : (
