@@ -24,7 +24,6 @@ export const UserInput: React.FC<UserInputProps> = ({ onCalculate }) => {
     (event: React.FormEvent) => {
       event.preventDefault();
       onCalculate(inputValues);
-      console.log('calculated' + inputValues.currentSavings);
     },
     [inputValues, onCalculate],
   );

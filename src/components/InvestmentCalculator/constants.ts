@@ -16,3 +16,11 @@ export const initialInputValue = {
   expectedReturn: 0,
   duration: 0,
 };
+export type ResultData = {
+  year: number;
+  yearlyInterest: number;
+  savingsEndOfYear: number;
+  yearlyContribution: number;
+  totalInterest: number;
+  investedCapital: number;
+};

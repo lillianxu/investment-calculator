@@ -1,6 +1,10 @@
 import React from 'react';
-
-export const ResultTable: React.FC = () => {
+import { ResultData } from './constants';
+import { ResultRow } from './ResultRow';
+interface ResultTableProps {
+  data: ResultData[];
+}
+export const ResultTable: React.FC<ResultTableProps> = ({ data }) => {
   return (
     <table>
       <thead>
@@ -13,13 +17,9 @@ export const ResultTable: React.FC = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        {data.map(yearlyData => (
+          <ResultRow data={yearlyData} key={yearlyData.year} />
+        ))}
       </tbody>
     </table>
   );
